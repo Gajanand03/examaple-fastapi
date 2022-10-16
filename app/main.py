@@ -1,9 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from . import models
-from .database import engine
 from .routers import post,user,auth,vote
-from .config import settings
 
 # Now we don't need this longer because of alembic
 # models.Base.metadata.create_all(bind=engine)
@@ -29,4 +26,4 @@ app.include_router(vote.router)
 
 @app.get("/")
 def root():
-    return {"message" : "Welcome to my API"}
+    return {"message" : "Welcome to Gajanand's free API"}
